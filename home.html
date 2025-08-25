@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+    <!--! font awesome cdn  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--! DaisyUI (CDN build) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!--! Custom css -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="outfit-fonts bg-[#f4f5f7] min-h-screen pb-12">
+    <!--! main header  -->
+    <header class="max-w-lg mx-auto">
+      <nav
+        class="flex items-center justify-between p-4 border-b border-[#666768] bg-[#fff]"
+      >
+        <div class="flex items-center gap-4">
+          <div>
+            <img class="w-12 h-12" src="./assets/Group.png" alt="" />
+          </div>
+          <div>
+            <h3 class="text-[#080808] text-lg font-bold">
+              $ <span id="Available-blanced">45000</span>
+            </h3>
+            <p>Available Balance</p>
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-neutral btn-outline">
+            <i class="fa-solid fa-arrow-right-from-bracket rotate-180"></i>
+            <span class="text-[rgba(8, 8, 8, 0.5)] text-[16px]">Logout</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!--! payment method  -->
+    <section class="bg-[#fff] max-w-lg mx-auto p-4 rounded-b-lg">
+      <div>
+        <h3 class="text-[#080808] text-2xl font-bold">🔥 Welcome to Payooo!</h3>
+        <p class="text-[rgba(8,8,8,0.5)] mt-3">
+          Enjoy easy and convenient financial services with us. Cashout charge
+          is low and
+        </p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-4">
+        <div id="Add-money" class="py-5 px-3 border border-gray-500 rounded-lg">
+          <img src="./assets/bonus1.png" alt="" class="mx-auto" />
+          <p class="text-[ #080808] mt-4 text-center">Add Money</p>
+        </div>
+        <div id="cashout-toggle" class="py-5 px-3 border border-gray-500 rounded-lg">
+          <img src="./assets/send1.png" alt="" class="mx-auto" />
+          <p class="text-[ #080808] mt-4 text-center">Cashout</p>
+        </div>
+        <div id="transfer-money-toggle" class="py-5 px-3 border border-gray-500 rounded-lg">
+          <img src="./assets/money1.png" alt="" class="mx-auto" />
+          <p class="text-[ #080808] mt-4 text-center">Transfer Money</p>
+        </div>
+        <div id="get-bonus" class="py-5 px-3 border border-gray-500 rounded-lg">
+          <img src="./assets/bonus1.png" alt="" class="mx-auto" />
+          <p class="text-[ #080808] mt-4 text-center">Get Bonus</p>
+        </div>
+        <div class="py-5 px-3 border border-gray-500 rounded-lg">
+          <img src="./assets/wallet1.png" alt="" class="mx-auto" />
+          <p class="text-[ #080808] mt-4 text-center">Pay Bill</p>
+        </div>
+        <div class="py-5 px-3 border border-gray-500 rounded-lg">
+          <img src="./assets/transaction1.png" alt="" class="mx-auto" />
+          <p class="text-[ #080808] mt-4 text-center">Transactions</p>
+        </div>
+      </div>
+    </section>
+
+    <main class="max-w-lg mx-auto pt-10">
+      <!-- ! latest payment  -->
+      <div id="latest-payment-method" class="p-4">
+        <h3 class="text-lg text-[#000] font-bold mb-4">Latest Payment</h3>
+        <div class="flex flex-col gap-3">
+          <div
+            class="bg-[#fff] bg-opacity-10 p-4 border border-[#e9e6e6] rounded-lg"
+          >
+            <div class="flex justify-between items-center">
+              <div class="flex items-center gap-4">
+                <div class="p-3 rounded-full bg-[#e2dede] bg-opacity-10">
+                  <img src="./assets/wallet1.png" alt="" />
+                </div>
+                <div>
+                  <h4 class="text-[#080808] font-semibold">Electricity Bill</h4>
+                  <p>Today 01:44 AM</p>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#fff] bg-opacity-10 p-4 border border-[#e9e6e6] rounded-lg"
+          >
+            <div class="flex justify-between">
+              <div class="flex items-center gap-4">
+                <div class="p-3 rounded-full bg-[#e2dede] bg-opacity-10">
+                  <img src="./assets/wallet1.png" alt="" />
+                </div>
+                <div>
+                  <h4 class="text-[#080808] font-semibold">Bank Deposit</h4>
+                  <p>Today 01:44 AM</p>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#fff] bg-opacity-10 p-4 border border-[#e9e6e6] rounded-lg"
+          >
+            <div class="flex justify-between">
+              <div class="flex items-center gap-4">
+                <div class="p-3 rounded-full bg-[#e2dede] bg-opacity-10">
+                  <img src="./assets/wallet1.png" alt="" />
+                </div>
+                <div>
+                  <h4 class="text-[#080808] font-semibold">Mobile Recharge</h4>
+                  <p>Today 01:44 AM</p>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#fff] bg-opacity-10 p-4 border border-[#e9e6e6] rounded-lg"
+          >
+            <div class="flex justify-between">
+              <div class="flex items-center gap-4">
+                <div class="p-3 rounded-full bg-[#e2dede] bg-opacity-10">
+                  <img src="./assets/wallet1.png" alt="" />
+                </div>
+                <div>
+                  <h4 class="text-[#080808] font-semibold">Electricity Bill</h4>
+                  <p>Today 01:44 AM</p>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#fff] bg-opacity-10 p-4 border border-[#e9e6e6] rounded-lg"
+          >
+            <div class="flex justify-between">
+              <div class="flex items-center gap-4">
+                <div class="p-3 rounded-full bg-[#e2dede] bg-opacity-10">
+                  <img src="./assets/wallet1.png" alt="" />
+                </div>
+                <div>
+                  <h4 class="text-[#080808] font-semibold">Gas Bill</h4>
+                  <p>Today 01:44 AM</p>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ! add money start   -->
+      <div id="add-money-form" class="hidden">
+        <h3 class="text-[rgba(8, 8, 8, 0.9)] text-lg font-semibold mb-4 ml-5">
+          Add Money
+        </h3>
+        <form id="add-money-form1" class="p-6 bg-[#fff] m-6 rounded-lg">
+          <!-- !secect bank  -->
+          <div class="mb-4">
+            <label
+              for="bank"
+              class="block text-sm font-medium mb-1 text-[rgba(8, 8, 8, 0.7)] text-[16px] font-medium"
+              >Select A Bank</label
+            >
+            <select
+              id="bank"
+              name="bank"
+              class="w-full p-3 rounded-lg bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option>Select bank</option>
+              <option>DBBL</option>
+              <option>Brac Bank</option>
+              <option>Islami Bank</option>
+            </select>
+          </div>
+          <!-- !Bank Account Number -->
+          <div class="mb-4">
+            <label
+              for="accountNumber1"
+              class="block mb-1 text-[rgba(8, 8, 8, 0.7)] text-[16px] font-medium"
+              >Bank Account Number</label
+            >
+            <input
+              type="text"
+              id="accountNumber1"
+              placeholder="Enter 11 digit account number"
+              class="w-full p-3 rounded-lg bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <!--! Amount to Add -->
+          <div class="mb-4">
+            <label
+              for="amount1"
+              class="block mb-1 text-[rgba(8, 8, 8, 0.7)] text-[16px] font-medium"
+              >Amount to Add</label
+            >
+            <input
+              type="number"
+              id="amount1"
+              autocomplete="off"
+              placeholder="Add Amount to withdraw"
+              class="w-full p-3 rounded-lg bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <!--! Pin Number -->
+          <div class="mb-6">
+            <label
+              for="pin1"
+              class="block mb-1 text-[rgba(8, 8, 8, 0.7)] text-[16px] font-medium"
+              >Pin Number</label
+            >
+            <input
+              type="password"
+              id="pin1"
+              autocomplete="current-password"
+              placeholder="Enter 4 digit pin number"
+              class="w-full p-3 rounded-lg bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <!--! Submit Button -->
+          <button
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-[32px] transition"
+            id="add-money-btn"
+          >
+            Add Money
+          </button>
+        </form>
+      </div>
+
+
+       <!-- !Cashout section start  -->
+     <div id="Cashout" class="hidden">
+        <h3 class="text-[rgba(8, 8, 8, 0.9)] text-lg font-semibold mb-4 ml-5">
+          Cash Out
+        </h3>
+        <form id="add-money-form2" class="p-6 bg-[#fff] m-6 rounded-lg">
+          <!-- !Bank Account Number -->
+          <div class="mb-4">
+            <label
+              for="accountNumber2"
+              class="block mb-1 text-[rgba(8, 8, 8, 0.7)] text-[16px] font-medium"
+              >Bank Account Number</label
+            >
+            <input
+              type="text"
+              id="accountNumber2"
+              placeholder="Enter 11 digit account number"
+              class="w-full p-3 bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-[32px]"
+            />
+          </div>
+          <!-- Amount to Add -->
+          <div class="mb-4">
+            <label
+              for="amount2"
+              class="block mb-1 text-[rgba(8, 8, 8, 0.7)] text-[16px] font-medium"
+              >Amount</label
+            >
+            <input
+              type="number"
+              id="amount2"
+              autocomplete="off"
+              placeholder="Enter amount to withdraw"
+              class="w-full p-3 bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-[32px]"
+            />
+          </div>
+          <!--! Pin Number -->
+          <div class="mb-6">
+            <label
+              for="pin2"
+              class="block mb-1 text-[rgba(8, 8, 8, 0.7)] text-[16px] font-medium"
+              >Pin Number</label
+            >
+            <input
+              type="password"
+              id="pin2"
+              autocomplete="current-password"
+              placeholder="Enter 4 digit pin number"
+              class="w-full p-3 bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-[32px]"
+            />
+          </div>
+
+          <!--! Submit Button -->
+          <button id="withdraw-money" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-[32px] transition">
+            Withdraw Money
+          </button>
+        </form>
+      </div>
+
+
+      <!-- !Transfer Money start  -->
+      <div id="money-transfer" class="hidden">
+        <h3 class="text-[rgba(8, 8, 8, 0.9)] text-lg font-semibold mb-4 ml-5">
+          Transfer Money
+        </h3>
+        <form id="add-money-form3" class="p-6 bg-[#fff] m-6 rounded-lg">
+          <!-- !Bank Account Number -->
+          <div class="mb-4">
+            <label
+              for="accountNumber3"
+              class="block mb-1 text-[rgba(8, 8, 8, 0.7)] text-[16px] font-medium"
+              >User Account Number</label
+            >
+            <input
+              type="text"
+              id="accountNumber3"
+              placeholder="Enter 11 digit number"
+              class="w-full p-3 bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-[32px]"
+            />
+          </div>
+          <!--! Amount to Add -->
+          <div class="mb-4">
+            <label
+              for="amount3"
+              class="block mb-1 text-[rgba(8, 8, 8, 0.7)] text-[16px] font-medium"
+              >Amount</label
+            >
+            <input
+              type="number"
+              id="amount3"
+              autocomplete="off"
+              placeholder="Enter amount to transfer"
+              class="w-full p-3 bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-[32px]"
+            />
+          </div>
+          <!--! Pin Number -->
+          <div class="mb-6">
+            <label
+              for="pin3"
+              class="block mb-1 text-[rgba(8, 8, 8, 0.7)] text-[16px] font-medium"
+              >Pin Number</label
+            >
+            <input
+              type="password"
+              id="pin3"
+              autocomplete="current-password"
+              placeholder="Enter 4 digit pin number"
+              class="w-full p-3 bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-[32px]"
+            />
+          </div>
+
+          <!--! Submit Button -->
+          <button id="send-now" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-[32px] transition">
+            Send Now
+          </button>
+        </form>
+      </div>
+
+      <!-- !get bonus part start  -->
+      <div id="Bonus" class="hidden">
+        <h3 class="text-[rgba(8, 8, 8, 0.9)] text-lg font-semibold mb-4 ml-5">
+          Get Bonus
+        </h3>
+        <form id="add-money-form4" class="p-6 bg-[#fff] m-6 rounded-lg">
+          <!-- !Bank Account Number -->
+          <div class="mb-4">
+            <label
+              for="accountNumber4"
+              class="block mb-1 text-[rgba(8, 8, 8, 0.7)] text-[16px] font-medium"
+              >Enter Bonus Coupon</label
+            >
+            <input
+              type="text"
+              id="accountNumber4"
+              placeholder="Enter your coupon"
+              class="w-full p-3 bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-[32px]"
+            />
+          </div>
+          <!--! Submit Button -->
+          <button
+           id="get-coupon-bonus" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-[32px] transition"
+          >
+            Get Bonus
+          </button>
+        </form>
+      </div>
+
+      <!-- !Pay Bill start  -->
+      <div class="hidden">
+        <h3 class="text-[rgba(8, 8, 8, 0.9)] text-lg font-semibold mb-4 ml-5">
+          Pay Bill
+        </h3>
+        <form id="pay-bill-form" class="p-6 bg-[#fff] m-6 rounded-lg">
+          <!-- !Select To Pay -->
+          <div class="mb-4">
+            <label
+              for="bank-pay"
+              class="block text-sm font-medium mb-1 text-[rgba(8, 8, 8, 0.7)] text-[16px] font-medium"
+              >Select To Pay</label
+            >
+            <select
+              id="bank-pay"
+              name="bank"
+              class="w-full p-3 rounded-[32px] bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option>Select back</option>
+              <option>Bkash</option>
+              <option>Nagad</option>
+              <option>Roket</option>
+            </select>
+          </div>
+          <!--! Amount to Add -->
+          <div class="mb-4">
+            <label
+              for="amount4"
+              class="block mb-1 text-[rgba(8, 8, 8, 0.7)] text-[16px] font-medium"
+              >Biller Account Number</label
+            >
+            <input
+              type="number"
+              id="amount4"
+              autocomplete="off"
+              placeholder="Add Amount to pay"
+              class="w-full p-3 bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-[32px]"
+            />
+          </div>
+          <!--! Pin Number -->
+          <div class="mb-6">
+            <label
+              for="pin4"
+              class="block mb-1 text-[rgba(8, 8, 8, 0.7)] text-[16px] font-medium"
+              >Pin Number</label
+            >
+            <input
+              type="password"
+              id="pin4"
+              autocomplete="current-password"
+              placeholder="Enter 4 digit pin number"
+              class="w-full p-3 bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-[32px]"
+            />
+          </div>
+
+          <!--! Submit Button -->
+          <button
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-[32px] transition"
+          >
+            Pay Now
+          </button>
+        </form>
+      </div>
+
+
+
+      <div id="latest-payment-method" class="p-4">
+        <h3 class="text-lg text-[#000] font-bold mb-4">Latest Payment</h3>
+        <div class="flex flex-col gap-3">
+          <div
+            class="bg-[#fff] bg-opacity-10 p-4 border border-[#e9e6e6] rounded-lg"
+          >
+            <div class="flex justify-between items-center">
+              <div class="flex items-center gap-4">
+                <div class="p-3 rounded-full bg-[#e2dede] bg-opacity-10">
+                  <img src="./assets/wallet1.png" alt="" />
+                </div>
+                <div>
+                  <h4 class="text-[#080808] font-semibold">Electricity Bill</h4>
+                  <p>Today 01:44 AM</p>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#fff] bg-opacity-10 p-4 border border-[#e9e6e6] rounded-lg"
+          >
+            <div class="flex justify-between">
+              <div class="flex items-center gap-4">
+                <div class="p-3 rounded-full bg-[#e2dede] bg-opacity-10">
+                  <img src="./assets/wallet1.png" alt="" />
+                </div>
+                <div>
+                  <h4 class="text-[#080808] font-semibold">Bank Deposit</h4>
+                  <p>Today 01:44 AM</p>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#fff] bg-opacity-10 p-4 border border-[#e9e6e6] rounded-lg"
+          >
+            <div class="flex justify-between">
+              <div class="flex items-center gap-4">
+                <div class="p-3 rounded-full bg-[#e2dede] bg-opacity-10">
+                  <img src="./assets/wallet1.png" alt="" />
+                </div>
+                <div>
+                  <h4 class="text-[#080808] font-semibold">Mobile Recharge</h4>
+                  <p>Today 01:44 AM</p>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#fff] bg-opacity-10 p-4 border border-[#e9e6e6] rounded-lg"
+          >
+            <div class="flex justify-between">
+              <div class="flex items-center gap-4">
+                <div class="p-3 rounded-full bg-[#e2dede] bg-opacity-10">
+                  <img src="./assets/wallet1.png" alt="" />
+                </div>
+                <div>
+                  <h4 class="text-[#080808] font-semibold">Electricity Bill</h4>
+                  <p>Today 01:44 AM</p>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#fff] bg-opacity-10 p-4 border border-[#e9e6e6] rounded-lg"
+          >
+            <div class="flex justify-between">
+              <div class="flex items-center gap-4">
+                <div class="p-3 rounded-full bg-[#e2dede] bg-opacity-10">
+                  <img src="./assets/wallet1.png" alt="" />
+                </div>
+                <div>
+                  <h4 class="text-[#080808] font-semibold">Gas Bill</h4>
+                  <p>Today 01:44 AM</p>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./home.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
