@@ -60,36 +60,37 @@
       </div>
 
       <div class="grid grid-cols-3 gap-4">
-        <div id="Add-money" class="py-5 px-3 border border-gray-500 rounded-lg">
+        <div id="Add-money-button" class="py-5 px-3 border border-gray-500 rounded-lg">
           <img src="./assets/bonus1.png" alt="" class="mx-auto" />
           <p class="text-[ #080808] mt-4 text-center">Add Money</p>
         </div>
-        <div id="cashout-toggle" class="py-5 px-3 border border-gray-500 rounded-lg">
+        <div id="cashout-button" class="py-5 px-3 border border-gray-500 rounded-lg">
           <img src="./assets/send1.png" alt="" class="mx-auto" />
           <p class="text-[ #080808] mt-4 text-center">Cashout</p>
         </div>
-        <div id="transfer-money-toggle" class="py-5 px-3 border border-gray-500 rounded-lg">
+        <div id="transfer-money-button" class="py-5 px-3 border border-gray-500 rounded-lg">
           <img src="./assets/money1.png" alt="" class="mx-auto" />
           <p class="text-[ #080808] mt-4 text-center">Transfer Money</p>
         </div>
-        <div id="get-bonus" class="py-5 px-3 border border-gray-500 rounded-lg">
+        <div id="get-bonus-button" class="py-5 px-3 border border-gray-500 rounded-lg">
           <img src="./assets/bonus1.png" alt="" class="mx-auto" />
           <p class="text-[ #080808] mt-4 text-center">Get Bonus</p>
         </div>
-        <div class="py-5 px-3 border border-gray-500 rounded-lg">
+        <div id="pay-bill-button" class="py-5 px-3 border border-gray-500 rounded-lg">
           <img src="./assets/wallet1.png" alt="" class="mx-auto" />
           <p class="text-[ #080808] mt-4 text-center">Pay Bill</p>
         </div>
-        <div class="py-5 px-3 border border-gray-500 rounded-lg">
+        <div id="transition-button" class="py-5 px-3 border border-gray-500 rounded-lg ">
           <img src="./assets/transaction1.png" alt="" class="mx-auto" />
           <p class="text-[ #080808] mt-4 text-center">Transactions</p>
         </div>
       </div>
+
     </section>
 
     <main class="max-w-lg mx-auto pt-10">
       <!-- ! latest payment  -->
-      <div id="latest-payment-method" class="p-4">
+      <!-- <div id="latest-payment-method" class="p-4">
         <h3 class="text-lg text-[#000] font-bold mb-4">Latest Payment</h3>
         <div class="flex flex-col gap-3">
           <div
@@ -183,10 +184,10 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- ! add money start   -->
-      <div id="add-money-form" class="hidden">
+      <div id="add-money-form" class="hidden form-toggler">
         <h3 class="text-[rgba(8, 8, 8, 0.9)] text-lg font-semibold mb-4 ml-5">
           Add Money
         </h3>
@@ -257,7 +258,7 @@
           <!--! Submit Button -->
           <button
             class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-[32px] transition"
-            id="add-money-btn"
+            id="Money-added"
           >
             Add Money
           </button>
@@ -266,7 +267,7 @@
 
 
        <!-- !Cashout section start  -->
-     <div id="Cashout" class="hidden">
+     <div id="Cashout-form" class="hidden form-toggler">
         <h3 class="text-[rgba(8, 8, 8, 0.9)] text-lg font-semibold mb-4 ml-5">
           Cash Out
         </h3>
@@ -325,7 +326,7 @@
 
 
       <!-- !Transfer Money start  -->
-      <div id="money-transfer" class="hidden">
+      <div id="money-transfer-form" class="hidden form-toggler">
         <h3 class="text-[rgba(8, 8, 8, 0.9)] text-lg font-semibold mb-4 ml-5">
           Transfer Money
         </h3>
@@ -383,26 +384,26 @@
       </div>
 
       <!-- !get bonus part start  -->
-      <div id="Bonus" class="hidden">
+      <div id="Bonus-form" class="hidden form-toggler">
         <h3 class="text-[rgba(8, 8, 8, 0.9)] text-lg font-semibold mb-4 ml-5">
           Get Bonus
         </h3>
         <form id="add-money-form4" class="p-6 bg-[#fff] m-6 rounded-lg">
-          <!-- !Bank Account Number -->
+          
           <div class="mb-4">
             <label
-              for="accountNumber4"
+              for="couponCode"
               class="block mb-1 text-[rgba(8, 8, 8, 0.7)] text-[16px] font-medium"
               >Enter Bonus Coupon</label
             >
             <input
               type="text"
-              id="accountNumber4"
+              id="couponCode"
               placeholder="Enter your coupon"
               class="w-full p-3 bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-[32px]"
             />
           </div>
-          <!--! Submit Button -->
+          
           <button
            id="get-coupon-bonus" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-[32px] transition"
           >
@@ -412,12 +413,12 @@
       </div>
 
       <!-- !Pay Bill start  -->
-      <div class="hidden">
+      <div id="pay-bill-form" class="hidden form-toggler">
         <h3 class="text-[rgba(8, 8, 8, 0.9)] text-lg font-semibold mb-4 ml-5">
           Pay Bill
         </h3>
         <form id="pay-bill-form" class="p-6 bg-[#fff] m-6 rounded-lg">
-          <!-- !Select To Pay -->
+          
           <div class="mb-4">
             <label
               for="bank-pay"
@@ -429,13 +430,12 @@
               name="bank"
               class="w-full p-3 rounded-[32px] bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              <option>Select back</option>
+              <option>Select bank</option>
               <option>Bkash</option>
               <option>Nagad</option>
               <option>Roket</option>
             </select>
           </div>
-          <!--! Amount to Add -->
           <div class="mb-4">
             <label
               for="amount4"
@@ -444,13 +444,28 @@
             >
             <input
               type="number"
-              id="amount4"
+              id="bill-account-number"
               autocomplete="off"
               placeholder="Add Amount to pay"
               class="w-full p-3 bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-[32px]"
             />
           </div>
-          <!--! Pin Number -->
+
+          <div class="mb-4">
+            <label
+              for="pay-amount"
+              class="block mb-1 text-[rgba(8, 8, 8, 0.7)] text-[16px] font-medium"
+              >Amount to Pay</label
+            >
+            <input
+              type="number"
+              id="pay-amount"
+              autocomplete="off"
+              placeholder="Add Amount to pay"
+              class="w-full p-3 bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-[32px]"
+            />
+          </div>
+         
           <div class="mb-6">
             <label
               for="pin4"
@@ -466,9 +481,8 @@
             />
           </div>
 
-          <!--! Submit Button -->
           <button
-            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-[32px] transition"
+           id="pay-now" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-[32px] transition"
           >
             Pay Now
           </button>
@@ -477,7 +491,7 @@
 
 
 
-      <div id="latest-payment-method" class="p-4">
+      <div id="latest-method" class="p-4 hidden form-toggler">
         <h3 class="text-lg text-[#000] font-bold mb-4">Latest Payment</h3>
         <div class="flex flex-col gap-3">
           <div
