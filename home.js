@@ -1,3 +1,27 @@
+//! set active class toggle
+function setActiveButton(activeId) {
+  const buttons = [
+    "Add-money-button",
+    "cashout-button",
+    "transfer-money-button",
+    "get-bonus-button",
+    "pay-bill-button",
+    "transition-button",
+  ];
+
+  buttons.forEach(buttonId => {
+    const button = document.getElementById(buttonId);
+    if(button){
+      button.classList.remove('active')
+    }
+  })
+
+  const activeButton = document.getElementById(activeId);
+  if(activeButton){
+    activeButton.classList.add('active')
+  }
+}
+
 //!toggle form
 function toggleMainForm(id) {
   const addMoneyForm = document.getElementById(id);
@@ -11,6 +35,7 @@ function toggleMainForm(id) {
 const addMoneyButton = document.getElementById("Add-money-button");
 addMoneyButton.addEventListener("click", function () {
   toggleMainForm("add-money-form");
+  setActiveButton('Add-money-button')
 });
 
 const moneyAdded = document.getElementById("Money-added");
@@ -45,16 +70,15 @@ moneyAdded.addEventListener("click", function (e) {
   availableBlanced.innerText = totalAvailableBlanced;
 });
 
-
-
-//! cashout 
-const cashoutFormButton = document.getElementById('cashout-button');
-cashoutFormButton.addEventListener('click',function(){
+//! cashout
+const cashoutFormButton = document.getElementById("cashout-button");
+cashoutFormButton.addEventListener("click", function () {
   toggleMainForm("Cashout-form");
-})
+  setActiveButton('cashout-button')
+});
 
-const widthrawMoney = document.getElementById('withdraw-money');
-widthrawMoney.addEventListener('click',function(e){
+const widthrawMoney = document.getElementById("withdraw-money");
+widthrawMoney.addEventListener("click", function (e) {
   e.preventDefault();
   const amount2 = document.getElementById("amount2");
   const amountValue = parseInt(amount2.value);
@@ -65,7 +89,7 @@ widthrawMoney.addEventListener('click',function(e){
   const accountNumber = "17830236570";
   const pinNumber = "12347";
 
-    if (accountNumber !== accountNumber2) {
+  if (accountNumber !== accountNumber2) {
     alert("Please input a valid account number");
     return false;
   }
@@ -75,21 +99,19 @@ widthrawMoney.addEventListener('click',function(e){
     return false;
   }
 
-
-  const totalAvailableBlanced = convertAvailableBlancedValue - amountValue  ;
+  const totalAvailableBlanced = convertAvailableBlancedValue - amountValue;
   availableBlanced.innerText = totalAvailableBlanced;
-})
+});
 
-
-//! transfer money 
-const transferMoneyButton = document.getElementById('transfer-money-button');
-transferMoneyButton.addEventListener('click',function(){
+//! transfer money
+const transferMoneyButton = document.getElementById("transfer-money-button");
+transferMoneyButton.addEventListener("click", function () {
   toggleMainForm("money-transfer-form");
-})
+  setActiveButton('transfer-money-button')
+});
 
-
-const sendMoney = document.getElementById('send-now');
-sendMoney.addEventListener('click',function(e){
+const sendMoney = document.getElementById("send-now");
+sendMoney.addEventListener("click", function (e) {
   e.preventDefault();
 
   const amount3 = document.getElementById("amount3");
@@ -101,9 +123,7 @@ sendMoney.addEventListener('click',function(e){
   const accountNumber = "17830236570";
   const pinNumber = "12347";
 
-
-
-      if (accountNumber !== accountNumber3) {
+  if (accountNumber !== accountNumber3) {
     alert("Please input a valid account number");
     return false;
   }
@@ -113,91 +133,84 @@ sendMoney.addEventListener('click',function(e){
     return false;
   }
 
-
-  const totalAvailableBlanced = convertAvailableBlancedValue - amountValue  ;
+  const totalAvailableBlanced = convertAvailableBlancedValue - amountValue;
   availableBlanced.innerText = totalAvailableBlanced;
-  
-  
-})
+});
 
-//! get bonus 
-const getBonusButton = document.getElementById('get-bonus-button');
-getBonusButton.addEventListener('click',function(){
+//! get bonus
+const getBonusButton = document.getElementById("get-bonus-button");
+getBonusButton.addEventListener("click", function () {
   toggleMainForm("Bonus-form");
-})
+  setActiveButton('get-bonus-button')
+});
 
-
-const getCouponBonus = document.getElementById('get-coupon-bonus');
-getCouponBonus.addEventListener('click',function(e){
+const getCouponBonus = document.getElementById("get-coupon-bonus");
+getCouponBonus.addEventListener("click", function (e) {
   e.preventDefault();
 
-  const couponCode = document.getElementById('couponCode').value.trim();
-    const availableBlanced = document.getElementById("Available-blanced");
-  
+  const couponCode = document.getElementById("couponCode").value.trim();
+  const availableBlanced = document.getElementById("Available-blanced");
 
-    if(couponCode === '') {
-    alert('Please enter a coupon code');
+  if (couponCode === "") {
+    alert("Please enter a coupon code");
     return;
   }
 
-  if(couponCode === 'BONUS100'){
+  if (couponCode === "BONUS100") {
     let convertAvailableBlancedValue = parseInt(availableBlanced.innerText);
     convertAvailableBlancedValue += 100;
-    
+
     availableBlanced.innerText = convertAvailableBlancedValue;
+  } else {
+    alert("Invalid coupon code!");
   }
-  else{
-    alert('Invalid coupon code!');
-  }
-})
+});
 
-
-
-//! PAY BILL 
-const payBillButton = document.getElementById('pay-bill-button');
-payBillButton.addEventListener('click',function(){
+//! PAY BILL
+const payBillButton = document.getElementById("pay-bill-button");
+payBillButton.addEventListener("click", function () {
   toggleMainForm("pay-bill-form");
-})
+  setActiveButton('pay-bill-button')
+});
 
-const payNow = document.getElementById('pay-now');
-payNow.addEventListener('click',function(e){
+const payNow = document.getElementById("pay-now");
+payNow.addEventListener("click", function (e) {
   e.preventDefault();
-  
-  const bankPay = document.getElementById('bank-pay').value;
-  const billAccountNumber = document.getElementById('bill-account-number').value.trim();
-  const pin4 = document.getElementById('pin4').value.trim();
-  const payAmount = document.getElementById('pay-amount');
-    const availableBlanced = document.getElementById("Available-blanced");
+
+  const bankPay = document.getElementById("bank-pay").value;
+  const billAccountNumber = document
+    .getElementById("bill-account-number")
+    .value.trim();
+  const pin4 = document.getElementById("pin4").value.trim();
+  const payAmount = document.getElementById("pay-amount");
+  const availableBlanced = document.getElementById("Available-blanced");
   const convertAvailableBlancedValue = parseInt(availableBlanced.innerText);
   const payAmountValue = parseInt(payAmount.value);
-   const accountNumber = "17830236570";
+  const accountNumber = "17830236570";
   const pinNumber = "12347";
-  
-   if (bankPay === "Select bank" || bankPay === "") {
+
+  if (bankPay === "Select bank" || bankPay === "") {
     alert("please select a bank");
     return;
   }
 
-  if(accountNumber !== billAccountNumber){
+  if (accountNumber !== billAccountNumber) {
     alert("Please input a valid account number");
     return false;
   }
-
 
   if (pinNumber !== pin4) {
     alert("Enter a valid pin");
     return false;
   }
 
-  const totalAvailableBlanced = convertAvailableBlancedValue - payAmountValue ;
+  const totalAvailableBlanced = convertAvailableBlancedValue - payAmountValue;
   availableBlanced.innerText = totalAvailableBlanced;
+});
 
-})
-
-
-
-//! latest mathod 
-const transitionButton = document.getElementById('transition-button');
-transitionButton.addEventListener('click',function(){
-  toggleMainForm('latest-method')
-})
+//! latest mathod
+const transitionButton = document.getElementById("transition-button");
+transitionButton.addEventListener("click", function () {
+  toggleMainForm("latest-method");
+  setActiveButton('transition-button')
+});

@@ -1,3 +1,12 @@
 .outfit-fonts {
     font-family: "Outfit", sans-serif;
 }
+
+.active {
+  background-color: rgba(8, 116, 242, 0.05); /* Blue background for active state */
+  border: 1px solid rgba(8, 116, 242, 1); /* Darker blue border */
+  color: rgba(8, 116, 242, 1) !important; /* White text for contrast */
+}
+
+
+
